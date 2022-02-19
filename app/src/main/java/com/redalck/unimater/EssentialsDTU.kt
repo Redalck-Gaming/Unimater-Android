@@ -25,7 +25,7 @@ class EssentialsDTU : AppCompatActivity() {
             startActivity(intent)
         }
         binding.githubButton.setOnClickListener {
-            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/akshaaatt/UnimateR"))
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Redalck-Gaming/Unimater-Android"))
             startActivity(browserIntent)
         }
         binding.cv.setOnClickListener {
