@@ -1,0 +1,7 @@
+UnimateR provides university and colleges students features like:
+
+1) CGPA Calculator
+2) Coding Contests Reminders and Information
+3) Access to college website
+
+More features coming soon!

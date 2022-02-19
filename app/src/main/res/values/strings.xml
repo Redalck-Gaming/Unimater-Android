@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Unimater</string>
+    <string name="dtu">DTU</string>
+    <string name="student">Student</string>
+    <string name="resume">Resume</string>
+    <string name="essentials">Essentials</string>
+    <string name="meet">Google Meet</string>
+    <string name="classroom">Google Classroom</string>
+    <string name="intern">Intern</string>
+    <string name="final_year">Final Year</string>
+    <string name="cp">Contests</string>
+    <string name="website">Website</string>
+    <string name="cgpaCalc">CGPA Calculator</string>
+    <string name="github">Github</string>
+    <string name="erp">ERP</string>
+    <integer name="anim_duration_long">1000</integer>
+
+</resources>
