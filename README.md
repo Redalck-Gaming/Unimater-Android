@@ -1,14 +1,14 @@
 <h1 align="center">Unimater</h1>
 
 <p align="center">
-    <a href="https://github.com/akshaaatt/UnimateR/commits/master">
-    <img src="https://img.shields.io/github/last-commit/akshaaatt/UnimateR.svg?style=flat-square&logo=github&logoColor=white"
+    <a href="https://github.com/Redalck-Gaming/Unimater-Android/commits/master">
+    <img src="https://img.shields.io/github/last-commit/Redalck-Gaming/Unimater-Android.svg?style=flat-square&logo=github&logoColor=white"
          alt="GitHub last commit">
-    <a href="https://github.com/akshaaatt/UnimateR/issues">
-    <img src="https://img.shields.io/github/issues-raw/akshaaatt/UnimateR.svg?style=flat-square&logo=github&logoColor=white"
+    <a href="https://github.com/Redalck-Gaming/Unimater-Android/issues">
+    <img src="https://img.shields.io/github/issues-raw/Redalck-Gaming/Unimater-Android.svg?style=flat-square&logo=github&logoColor=white"
          alt="GitHub issues">
-    <a href="https://github.com/akshaaatt/UnimateR/pulls">
-    <img src="https://img.shields.io/github/issues-pr-raw/akshaaatt/UnimateR.svg?style=flat-square&logo=github&logoColor=white"
+    <a href="https://github.com/Redalck-Gaming/Unimater-Android/pulls">
+    <img src="https://img.shields.io/github/issues-pr-raw/Redalck-Gaming/Unimater-Android.svg?style=flat-square&logo=github&logoColor=white"
          alt="GitHub pull requests">
 </p>
       
