@@ -1,12 +1,8 @@
 package com.redalck.unimater.cgpa
 
 import android.os.Bundle
-import android.view.View
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import com.github.mikephil.charting.animation.Easing
-import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
@@ -16,30 +12,30 @@ import com.github.mikephil.charting.formatter.IValueFormatter
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import com.github.mikephil.charting.utils.ViewPortHandler
 import com.redalck.unimater.R
+import com.redalck.unimater.databinding.ActivityGraphBinding
 import java.text.DecimalFormat
-import java.util.*
 
 class GraphActivity : AppCompatActivity() {
     private var labels_8 = arrayOf("1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "CGPA")
+    private lateinit var binding: ActivityGraphBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_graph)
-        val toolbar: Toolbar = findViewById<View>(R.id.toolbar) as Toolbar
-        setSupportActionBar(toolbar)
+        binding = ActivityGraphBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        setSupportActionBar(binding.toolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         val b = this.intent.extras
         val sgpa = b!!.getFloatArray("sgpa")
-        val chart = findViewById<View>(R.id.chart) as BarChart
-        val result_view = findViewById<TextView>(R.id.result_view)
 
         val nOfSem = 8
-        chart.xAxis.valueFormatter = IndexAxisValueFormatter(labels_8)
+        binding.contentGraph.chart.xAxis.valueFormatter = IndexAxisValueFormatter(labels_8)
 
         val cgpa = DecimalFormat("0.00").format(sgpa!![nOfSem])
         val total_credit = sgpa[nOfSem + 1].toInt()
-        result_view.text = "CGPA : $cgpa\nTotal Credit : $total_credit"
-        chart.description.isEnabled = false
+        binding.contentGraph.resultView.text = "CGPA : $cgpa\nTotal Credit : $total_credit"
+        binding.contentGraph.chart.description.isEnabled = false
         val entries = ArrayList<BarEntry>()
         var Xvalue = 0.toFloat()
         for (i in 0..nOfSem) {
@@ -67,28 +63,28 @@ class GraphActivity : AppCompatActivity() {
             applicationContext
         )
         set.valueFormatter = MyValueFormatter()
-        val xAxis = chart.xAxis
+        val xAxis = binding.contentGraph.chart.xAxis
         xAxis.setDrawGridLines(false)
         xAxis.position = XAxis.XAxisPosition.BOTTOM
         xAxis.granularity = 1f
         xAxis.isGranularityEnabled = true
         xAxis.labelRotationAngle = -45f
         //xAxis.setTextSize(14);
-        val left = chart.axisLeft
-        val yAxis = chart.axisLeft
-        chart.axisRight.isEnabled = false // no right axis
+        val left = binding.contentGraph.chart.axisLeft
+        val yAxis = binding.contentGraph.chart.axisLeft
+        binding.contentGraph.chart.axisRight.isEnabled = false // no right axis
         yAxis.axisMaximum = 10f
         yAxis.axisMinimum = 1.5f
 
         //chart.setPinchZoom();
-        chart.animateY(3000, Easing.EasingOption.EaseOutCubic)
+        binding.contentGraph.chart.animateY(3000, Easing.EasingOption.EaseOutCubic)
         val data = BarData(set)
         data.barWidth = 0.9f // set custom bar width
-        chart.data = data
-        chart.setFitBars(true) // make the x-axis fit exactly all bars
-        chart.invalidate() // refresh
+        binding.contentGraph.chart.data = data
+        binding.contentGraph.chart.setFitBars(true) // make the x-axis fit exactly all bars
+        binding.contentGraph.chart.invalidate() // refresh
 
-        toolbar.setOnMenuItemClickListener {
+        binding.toolbar.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.home -> {
                     finish()
@@ -96,7 +92,7 @@ class GraphActivity : AppCompatActivity() {
             }
             false
         }
-        toolbar.setNavigationOnClickListener {
+        binding.toolbar.setNavigationOnClickListener {
             finish()
         }
     }

@@ -20,6 +20,8 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_graph" />
+    <include
+        android:id="@+id/contentGraph"
+        layout="@layout/content_graph" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
